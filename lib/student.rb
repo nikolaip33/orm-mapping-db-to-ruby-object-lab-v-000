@@ -6,7 +6,7 @@ class Student
     self.new.tap do |s|
       s.id = row[0]
       s.name = row[1]
-      s.length = row[2]
+      s.grade = row[2]
     end
   end
 
