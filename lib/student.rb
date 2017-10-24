@@ -3,6 +3,11 @@ class Student
 
   def self.new_from_db(row)
     # create a new Student object given a row from the database
+    self.new.tap do |s|
+      s.id = row[0]
+      s.name = row[1]
+      s.length = row[2]
+    end
   end
 
   def self.all
