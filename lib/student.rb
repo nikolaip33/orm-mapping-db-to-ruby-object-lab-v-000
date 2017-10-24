@@ -98,4 +98,16 @@ class Student
       self.new_from_db(row)
     end.first
   end
+
+
+  def self.all_students_in_grade_X(x)
+    sql = <<-SQL
+      SELECT * FROM students WHERE grade = ?
+    SQL
+
+
+
+  end
+
+  
 end #class Student
