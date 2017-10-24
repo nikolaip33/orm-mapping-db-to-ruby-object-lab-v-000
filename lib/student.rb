@@ -70,4 +70,13 @@ class Student
     end
   end
 
+  def self.students_below_12th_grade
+    sql = <<-SQL
+      SELECT * FROM students WHERE GRADE = ?
+    SQL
+    DB[:conn].execute(sql, "'('9','10','11')").map do |row|
+      self.new_from_db(row)
+    end
+  end
+
 end #class Student
